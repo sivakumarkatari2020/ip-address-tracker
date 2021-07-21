@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/icon-location.svg">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <link rel="stylesheet" href="style.css">
+  <title>IP Address Tracker</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="hero">
+      <h1>IP Address Tracker</h1>
+      <div class="searchBox">
+        <input type="text" name="" id="search" placeholder="Search for any IP address or domain">
+        <button type="submit" onclick="fetchAddress()">
+          <img src="images/icon-arrow.svg"></img>
+        </button>
+      </div>
+    </div>
+
+    <div id="map" class="main"></div>
+
+    <div class="floatInfo">
+      <div class="ip border">
+        <h3>ip address</h3>
+        <h1 id="ip-value">--</h1>
+      </div>
+      <div class="loc border">
+        <h3>location</h3>
+        <h1 id="loc-value">--</h1>
+      </div>
+      <div class="time border">
+        <h3>timezone</h3>
+        <h1 id="time-value">--</h1>
+      </div>
+      <div class="isp">
+        <h3>isp</h3>
+        <h1 id="isp-value">--</h1>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

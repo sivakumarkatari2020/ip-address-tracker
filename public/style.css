@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap');
+
+:root{
+    --text-light : hsl(0, 0%, 17%);
+    --text-dark : hsl(0, 0%, 59%);
+    --light : 300;
+    --medium : 500;
+    --bold : 700;
+    --font : 'Rubik', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--font);
+    font-weight: var(--medium);
+}
+body{
+    width: 100%;
+    background-color: #FFF;
+}
+.container{
+    width : 100%;
+    height: 100vh;
+    max-height: 700px;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+.hero{
+    width : 100%;
+    height: 35%;
+    background: url('./images/pattern-bg.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.hero h1{
+    color: #FFF;
+    margin: 1rem 0;
+}
+.hero .searchBox{
+    width : 50%;
+    max-width: 500px;
+    height: 50px;
+    background-color: #FFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, 
+                rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width : 480px) {
+    .hero h1{
+        transform: scale(0.8);
+        white-space: nowrap;
+    }
+    .hero .searchBox{
+        width : 80%;
+    }
+}
+.searchBox input{
+    width: 90%;
+    height: 100%;
+    padding: 0 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: var(--light);
+    color: var(--text-light);
+}
+.searchBox button{
+    width: 15%;
+    height: 100%;
+    background-color: #000;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    width: 100%;
+    height: 70%;
+    max-height: 600px;
+    background-color: #FFF;
+}
+.floatInfo{
+    width: 70%;
+    height: 100px;
+    padding: 1rem;
+    background-color: #FFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, 
+                rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+@media (max-width : 480px){
+    .floatInfo{
+        width: 80%;
+        padding: 1rem 0;
+        min-height: 280px;
+        flex-direction: column;
+        top: 35%;
+    }
+}
+.floatInfo div{
+    width: 25%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.border{
+    border-right: 2px solid var(--text-dark);
+}
+@media (max-width : 480px){
+    .floatInfo div{
+        width: 100%;
+        min-height: 25%;
+    }
+    .border{
+        border : none;
+    }
+}
+.floatInfo div h3{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+}
+.floatInfo div h1{
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #000;
+    font-weight: var(--bold);
+    text-align: center;
+}
+
+
