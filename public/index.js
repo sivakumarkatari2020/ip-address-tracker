@@ -11,6 +11,7 @@ L.marker([17.387140,78.491684]).addTo(map)
 //to fetch the data from Geo-loocation API
 function fetchAddress(){
     let query = document.getElementById('search').value;
+    document.getElementById('floatInfo').style.display = 'flex';
     if(query.length > 0){
         let regEx = /(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}/;
         if(regEx.test(query)){
@@ -47,6 +48,12 @@ function fetchAddress(){
 
             })
 
+            //Removing floatInfo panel for mobile devices after 10 seconds for full map view again click on arrow to make it appear again
+            setTimeout(()=>{
+                if(document.documentElement.clientWidth < 480){
+                    document.getElementById('floatInfo').style.display = 'none';
+                }
+            },10000)
         }
         else if(/[^@ \t\r\n]+[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(query)){
             let IP_VAL = document.querySelector('#ip-value');
@@ -55,7 +62,6 @@ function fetchAddress(){
             let ISP_VAL = document.querySelector('#isp-value');
             //fetching Geo Location
             fetch(`https://geo.ipify.org/api/v1?apiKey=at_TS463r2RkWX4LzJ8UeTtaL5BOpbqL&domain=${query}`)
-            .then(err => window.alert(`${err.statusText} \nEnter correct domain name. \n(Don't include https:// or '/')`))
             .then(response => response.json())
             .then(result => {
                 //variables
@@ -82,6 +88,13 @@ function fetchAddress(){
                     .openPopup();
 
             })    
+
+            //Removing floatInfo panel for mobile devices after 10 seconds for full map view again click on arrow to make it appear again
+            setTimeout(()=>{
+                if(document.documentElement.clientWidth < 480){
+                    document.getElementById('floatInfo').style.display = 'none';
+                }
+            },10000)
         }
         else{
             window.alert("Please provide correct IP address/Domain Name.");

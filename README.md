@@ -25,7 +25,7 @@ Users should be able to:
 - Build the website as close as to the given design preview.
 ### Screenshot
 
-![](/public/my-preview.png)
+![](/public/images/my-preview.png)
 
 ### Links
 

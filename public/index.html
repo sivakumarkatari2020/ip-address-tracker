@@ -16,7 +16,8 @@
 <body>
 
   <div class="container">
-    <div class="hero">
+    <div class="hero"></div>
+    <div class="panel">
       <h1>IP Address Tracker</h1>
       <div class="searchBox">
         <input type="text" name="" id="search" placeholder="Search for any IP address or domain">
@@ -24,28 +25,28 @@
           <img src="images/icon-arrow.svg"></img>
         </button>
       </div>
+
+      <div class="floatInfo" id="floatInfo">
+        <div class="ip border">
+          <h3>ip address</h3>
+          <h1 id="ip-value">--</h1>
+        </div>
+        <div class="loc border">
+          <h3>location</h3>
+          <h1 id="loc-value">--</h1>
+        </div>
+        <div class="time border">
+          <h3>timezone</h3>
+          <h1 id="time-value">--</h1>
+        </div>
+        <div class="isp">
+          <h3>isp</h3>
+          <h1 id="isp-value">--</h1>
+        </div>
+      </div>
     </div>
 
     <div id="map" class="main"></div>
-
-    <div class="floatInfo">
-      <div class="ip border">
-        <h3>ip address</h3>
-        <h1 id="ip-value">--</h1>
-      </div>
-      <div class="loc border">
-        <h3>location</h3>
-        <h1 id="loc-value">--</h1>
-      </div>
-      <div class="time border">
-        <h3>timezone</h3>
-        <h1 id="time-value">--</h1>
-      </div>
-      <div class="isp">
-        <h3>isp</h3>
-        <h1 id="isp-value">--</h1>
-      </div>
-    </div>
   </div>
 
   <script src="index.js"></script>
