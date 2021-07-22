@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/sivakumarkatari2020/loopstudios-landing-page)
-- Live Site URL: (https://loopstudios01.netlify.app/)
+- Live Site URL: (https://ip-address-tracker01.netlify.app/)
 
 ## My process
 
