@@ -1,5 +1,13 @@
-//variables
-
+//Initializing MAP instance with leafletjs.com
+let map = L.map('map');
+//default place before searching for any address - Hyderabad,INDIA
+map.setView([17.387140,78.491684], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+L.marker([17.387140,78.491684]).addTo(map)
+    .bindPopup(`default<br /><b>Hyderabad</b>`)
+    .openPopup();
 //to fetch the data from Geo-loocation API
 function fetchAddress(){
     let query = document.getElementById('search').value;
@@ -14,13 +22,13 @@ function fetchAddress(){
             fetch(`https://geo.ipify.org/api/v1?apiKey=at_TS463r2RkWX4LzJ8UeTtaL5BOpbqL&ipAddress=${query}`)
             .then(response => response.json())
             .then(result => {
-                console.log(result);
+                //variables
                 IP_VAL.innerText = result.ip;
                 LOC_VAL.innerText = `${result.location.city},${result.location.country}`;
                 TIME_VAL.innerText = `UTC ${result.location.timezone}`;
                 ISP_VAL.innerText = result.isp;
                 //Arranging Map
-                var map = L.map('map').setView([`${result.location.lat}`, `${result.location.lng}`], 13);
+                map.setView([`${result.location.lat}`, `${result.location.lng}`], 13);
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -47,15 +55,16 @@ function fetchAddress(){
             let ISP_VAL = document.querySelector('#isp-value');
             //fetching Geo Location
             fetch(`https://geo.ipify.org/api/v1?apiKey=at_TS463r2RkWX4LzJ8UeTtaL5BOpbqL&domain=${query}`)
+            .then(err => window.alert(`${err.statusText} \nEnter correct domain name. \n(Don't include https:// or '/')`))
             .then(response => response.json())
             .then(result => {
-                console.log(result);
+                //variables
                 IP_VAL.innerText = result.ip;
                 LOC_VAL.innerText = `${result.location.city},${result.location.country}`;
                 TIME_VAL.innerText = `UTC ${result.location.timezone}`;
                 ISP_VAL.innerText = result.isp;
                 //Arranging map
-                var map = L.map('map').setView([`${result.location.lat}`, `${result.location.lng}`], 13);
+                map.setView([`${result.location.lat}`, `${result.location.lng}`], 13);
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
